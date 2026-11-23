@@ -10,7 +10,8 @@ export async function GET() {
             },
         });
         return NextResponse.json(todos);
-    } catch {
+    } catch (error) {
+        console.error("GET TODOS ERROR:", error);
         return NextResponse.json(
             { error: "Gagal mengambil data Todo" },
             { status: 500 }
